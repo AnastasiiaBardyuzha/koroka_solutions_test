@@ -1,0 +1,64 @@
+@import "../../utils/mixins";
+@import "../../utils/vars"; 
+
+.header {
+    display: flex;
+    padding: 0 24px;
+    justify-content: space-between;
+    align-items: center;
+    height: 76px;
+    box-shadow: 0px 1px 0px rgba(17, 17, 17, 0.1);
+
+    &__logo {
+        height: 32px;
+    }
+
+    &__logo-img {
+        height: 100%;
+    }
+
+    &__sign-in-part {
+        display: inline-block;
+    }
+
+    &__user-avatar {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        margin-left: 12px;
+        background-color: #F1F1F1;
+        position: relative;
+    }
+
+    &__avatar-img {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 24px;
+        height: 24px;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.nav-part {
+    display: flex;
+    padding-top: 8px;
+
+    &__sign-in {
+        border: none;
+        font-family: $font-family-main;
+        font-size: 16px;
+        line-height: 24px;
+        outline: none;
+        cursor: pointer;
+        color: $buttons-user-color;
+    }
+
+    &__islogged {
+        display: flex;
+        align-items: center;
+        @include reset-link;
+        @include nav_link;
+        color: $buttons-user-color;
+    }
+}

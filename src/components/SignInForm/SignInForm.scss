@@ -1,0 +1,74 @@
+@import "../../utils/mixins";
+@import "../../utils/vars"; 
+
+.sign-in-form {
+	margin: 0 auto;
+	padding: 32px 0 42px;
+	max-width: 474px;
+	box-shadow: 0px 4px 16px rgba(51, 51, 51, 0.08), 0px 4px 4px rgba(51, 51, 51, 0.04);
+	border-radius: 8px;
+
+	&__title {
+		@include heading;
+		@include head-sign-in-form;
+		color: $color-black;
+		padding-left: 32px;
+	}
+
+	&__list {
+		padding: 0 32px;
+		margin: 0;
+		width: 100%;
+		list-style: none;
+		display: flex;
+		align-items: center;
+		border-bottom: 1px solid #F1F1F1;
+		padding-bottom: 14px;
+	}
+
+	&__item {
+		display: inline-block;
+		margin-right: 24px;
+	}
+
+	&__link {
+		@include nav_link;
+		@include reset-link;
+		color: #6b6b6b;
+		padding-bottom: 15px;
+		position: relative;
+
+		&:hover {
+			color: $main-color;
+		}
+
+		&:focus {
+			color: $main-color;
+		}
+
+		&:after {
+			@include link-after;
+			width: 0;
+			transition: width 0.1s linear;
+		}
+
+		&:hover:after {
+			@include link-after-focus-hover;
+		}
+
+		&:focus:after {
+			@include link-after-focus-hover;
+		}
+	}
+
+	&__sign-in {
+		display: block;
+		width: 100%;
+		height: 44px;
+		padding: 10px 0;
+		@include reset-link;
+		@include nav_link;
+		text-align: center;
+		color: $content-button-after-background
+	}
+}
