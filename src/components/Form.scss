@@ -1,0 +1,129 @@
+@import "../utils/vars"; 
+@import "../utils/mixins"; 
+
+.form-wrapper {
+    padding: 0 32px;
+  }
+  
+  .form {
+    width: 100%;
+  
+      &__input-wrapper {
+        display: block;
+        position: relative;
+      }
+  
+      &__label {
+        display: block;
+        position: absolute;
+        top: 16px;
+        left: 16px;
+        transition: all 0.2s linear;
+        color: $no-active-color;
+        
+      }
+  
+      &__label-focused {
+        top: 6px;
+        font-size: 13px;
+        line-height: 20px;
+      }
+  
+      &__input {
+        @include input-look;
+        width: 100%;
+        margin-bottom: 20px;
+        background: #fff;
+        transition: box-shadow 0.2s linear;
+  
+        &:hover {
+          box-shadow: 0px 4px 24px rgba(51, 51, 51, 0.24), 0px 4px 4px rgba(51, 51, 51, 0.04);
+        }
+  
+        &:focus {
+          box-shadow: 0px 4px 24px rgba(51, 51, 51, 0.24), 0px 4px 4px rgba(51, 51, 51, 0.04);
+        }
+      }
+  
+      &__button {
+        @include button;
+        width: 100%;
+        padding: 10px;
+        color: #fff;
+        margin-bottom: 8px;
+        background-color: $content-button-after-background;
+        border-radius: 4px;
+        transition: background-color 200ms linear;
+  
+        &:hover {
+          background-color: $button-hover-color;
+        }
+  
+        &:active {
+          background-color: $button-active-color;
+        }
+  
+        &:focus {
+          outline: none;
+          border: 2px solid #472C8A;
+        }
+      }
+    
+    &__accept {
+      display: flex;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+  
+    &__accept-input {
+      position: absolute;
+      z-index: -1;
+      opacity: 0;
+    }
+  
+  
+    &__accept-label {
+      display: inline-block;
+      
+  
+      &::before {
+        content: "";
+        color: #000;
+        display: inline-block;
+        margin-right: 12px;
+        position: relative;
+        width: 24px;
+        height: 24px;
+        background: #FFF;
+        border: 1px solid #D4D4D4;
+        border-radius: 4px;
+        vertical-align: middle;
+      }
+    }
+  
+    .form__accept-input:checked + .form__accept-label:before {
+      background-color: $content-button-after-background;
+      background-image: url(../images/checkbox/vector.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      transition: background-color 200ms linear;
+    }
+  
+    .form__accept-input:checked:hover + .form__accept-label:before {
+      background-color: $button-hover-color;
+    }
+  
+    .form__accept-input:checked:active + .form__accept-label:before {
+      background-color: $button-active-color;
+    }
+  
+    .form__accept-input:checked:focus + .form__accept-label:before {
+      border: 2px solid rgba(17, 17, 17, 0.48);
+    }
+  
+    &__accept-link {
+      @include nav_link;
+      @include reset-link;
+      color: $color-purple;
+    }
+  }

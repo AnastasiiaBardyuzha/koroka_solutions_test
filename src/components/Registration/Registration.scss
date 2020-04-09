@@ -22,61 +22,43 @@
       margin-right: 8px;
       height: 36px;
       width: 36px;
+      transition: transform 200ms linear;
 
       &:last-child {
         margin-right: 0;
       }
-    }
-}
-
-.form {
-  width: 100%;
-  padding: 0 32px;
-
-    &__input-wrapper {
-      display: block;
-      position: relative;
-    }
-
-    &__label {
-      display: block;
-      position: absolute;
-      top: 16px;
-      left: 16px;
-      transition: all 0.2s linear;
-      color: $no-active-color;
-      
-    }
-
-    &__label-focused {
-      top: 6px;
-      font-size: 13px;
-      line-height: 20px;
-    }
-
-    &__input {
-      @include input-look;
-      width: 100%;
-      margin-bottom: 20px;
-      background: #fff;
-      transition: box-shadow 0.2s linear;
 
       &:hover {
-        box-shadow: 0px 4px 24px rgba(51, 51, 51, 0.24), 0px 4px 4px rgba(51, 51, 51, 0.04);
+        transform: scale(1.2);
       }
 
       &:focus {
-        box-shadow: 0px 4px 24px rgba(51, 51, 51, 0.24), 0px 4px 4px rgba(51, 51, 51, 0.04);
+        outline: none;
+        transform: scale(1.2);
       }
     }
+}
 
-    &__button {
-      @include button;
-      width: 100%;
-      padding: 10px;
-      color: #fff;
+.redirect-sign-in {
+  display: block;
+  width: 100%;
+  height: 44px;
+  border-radius: 4px;
+  padding: 10px 0;
+  @include reset-link;
+  @include nav_link;
+  text-align: center;
+  color: $content-button-after-background;
 
-      background-color: $content-button-after-background;
-      border-radius: 4px;
-    }
+  &:hover {
+    background-color: $button-light-hover-color;
+  }
+
+  &:active {
+    background: rgba(255, 255, 255, 0.96);
+  }
+
+  &:focus {
+    border: 2px solid #472C8A;
+  }
 }

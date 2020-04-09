@@ -1,18 +1,33 @@
 @import "../../utils/mixins";
 @import "../../utils/vars"; 
 
+.sign-in-form-wrapper {
+	display: block;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	z-index: 10;
+}
+
 .sign-in-form {
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 	margin: 0 auto;
 	padding: 32px 0 42px;
-	max-width: 474px;
+	width: 474px;
 	box-shadow: 0px 4px 16px rgba(51, 51, 51, 0.08), 0px 4px 4px rgba(51, 51, 51, 0.04);
 	border-radius: 8px;
+	z-index: 20;
 
 	&__title {
 		@include heading;
 		@include head-sign-in-form;
 		color: $color-black;
 		padding-left: 32px;
+		margin: 0 0 21px;
 	}
 
 	&__list {
@@ -35,7 +50,7 @@
 		@include nav_link;
 		@include reset-link;
 		color: #6b6b6b;
-		padding-bottom: 15px;
+		padding-bottom: 16px;
 		position: relative;
 
 		&:hover {
@@ -56,19 +71,12 @@
 			@include link-after-focus-hover;
 		}
 
+		&.active:after {
+			@include link-after-focus-hover;
+		}
+
 		&:focus:after {
 			@include link-after-focus-hover;
 		}
-	}
-
-	&__sign-in {
-		display: block;
-		width: 100%;
-		height: 44px;
-		padding: 10px 0;
-		@include reset-link;
-		@include nav_link;
-		text-align: center;
-		color: $content-button-after-background
 	}
 }

@@ -1,0 +1,36 @@
+@import "../../utils/mixins";
+@import "../../utils/vars"; 
+
+.catalog {
+
+    &__title {
+      @include heading;
+      @include head-main;
+      margin-top: 40px;
+    }
+
+    &__content {
+      max-width: 724px;
+      margin-bottom: 32px;
+    }
+
+    &__form {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &__search {
+      @include input-look;
+      width: 985px;
+      height: 56px;
+    }
+
+    &__courses {
+      margin-top: 32px;
+      display: grid;
+      grid-template-columns: repeat(3, 400px);
+      grid-gap: 32px;
+      justify-content: center;
+    }
+}

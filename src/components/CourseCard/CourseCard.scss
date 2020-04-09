@@ -1,0 +1,112 @@
+@import "../../utils/mixins";
+@import "../../utils/vars"; 
+
+.course{
+  max-width: 400px;
+  box-shadow: 0px 4px 16px rgba(51, 51, 51, 0.08), 0px 4px 4px rgba(51, 51, 51, 0.04);
+  border-radius: 8px; 
+  position: relative;
+  overflow: hidden;
+
+  &__cover {
+    display: block;
+    position: relative;
+  }
+
+  &__author {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: -2px;
+    left: 20px;
+    color: #fff;
+  }
+
+  &__author-photo {
+    margin-right: 12px;
+  }
+
+  &__progress {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 24px;
+    width: 12%;
+    background-color: #27AE60;
+  }
+
+  &__progress-text {
+    display: block;
+    position: absolute;
+    top: 2px;
+    left: 32px;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 20px;
+  }
+
+  &__content {
+    padding: 4px 20px 20px;
+  }
+
+  &__title {
+    @include heading;
+    @include head-course;
+    margin-bottom: 14px;
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    padding-bottom: 78px;
+  }
+
+  &__lessons {
+    display: flex;
+    align-items: center;
+    margin-right: 12px;
+  }
+
+  &__info-img {
+    margin-right: 4px;
+    width: 24px;
+    height: 24px;
+  }
+
+  &__buttons {
+    display: block;
+    position: absolute;
+    bottom: 20px;    
+  }
+
+  &__button {
+    @include button;
+    outline: none;
+
+    background: #fff;
+    color: $content-button-after-background;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    margin-right: 8px;
+
+    &:hover {
+      background: rgba(110, 65, 226, 0.04);;
+    }
+
+    &:active {
+      background: rgba(110, 65, 226, 0.08);
+    }
+
+    &:focus {
+      outline: none;
+      border: 2px solid rgba(17, 17, 17, 0.48);
+    }
+  }
+
+  &__button_continue {
+    border: 1px solid #6E41E2;
+  }
+}

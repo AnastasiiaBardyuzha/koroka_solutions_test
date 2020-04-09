@@ -46,6 +46,10 @@
 				transition: width 0.1s linear;
 			}
 
+			&.active:after {
+				@include link-after-focus-hover;
+			}
+
 			&:hover:after {
 				@include link-after-focus-hover;
 			}

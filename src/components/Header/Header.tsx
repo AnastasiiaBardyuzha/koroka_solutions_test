@@ -22,7 +22,6 @@ export const HeaderTemplate: FC<Props> = ({ isLogged, changeSignInClicked }) => 
       </Link>
       <div className="nav-part">
         <Nav />
-
         {isLogged
           ? (
             <Link to="/profile" className="nav-part__islogged">
@@ -35,9 +34,9 @@ export const HeaderTemplate: FC<Props> = ({ isLogged, changeSignInClicked }) => 
             </Link>
           )
           : (
-            <button type="button" className="nav-part__sign-in" onClick={() => changeSignInClicked(true)}>
+            <Link to="/registration" className="nav-part__sign-in" onClick={() => changeSignInClicked(true)}>
               Sign In
-            </button>
+            </Link>
           )}
       </div>
     </header>
