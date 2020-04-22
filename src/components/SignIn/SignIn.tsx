@@ -1,6 +1,6 @@
 import React, { FC, useState } from 'react';
 import { connect } from 'react-redux';
-import { Redirect } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 import { setSignInClicked, setIsLogged } from '../../redux/actionCreators';
 import './SignIn.scss';
@@ -20,6 +20,7 @@ export const SignInTemplate: FC<Props> = ({
   const [actual, setActual] = useState(true);
   const [userName, setUserName] = useState('');
   const [userEmail, setUserEmail] = useState('');
+  const history = useHistory();
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = event.target;
@@ -73,12 +74,10 @@ export const SignInTemplate: FC<Props> = ({
       changeSignInClicked(false);
       changeIsLogged(true);
 
-      return <Redirect to="/" />;
+      history.push('/');
     }
 
     setActual(false);
-
-    return '';
   };
 
   return (

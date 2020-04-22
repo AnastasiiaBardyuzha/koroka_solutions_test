@@ -15,7 +15,7 @@ export interface State {
 
 const initialState = {
   isLogged: false,
-  signInClicked: false,
+  signInClicked: true,
 };
 
 export const reduser = (state = initialState, action: AnyAction) => {

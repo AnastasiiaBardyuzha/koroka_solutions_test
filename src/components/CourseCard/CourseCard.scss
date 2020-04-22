@@ -13,6 +13,10 @@
     position: relative;
   }
 
+  &__img {
+    height: 135px;
+  }
+
   &__author {
     display: flex;
     align-items: center;
@@ -39,8 +43,8 @@
   &__progress-text {
     display: block;
     position: absolute;
-    top: 2px;
-    left: 32px;
+    top: 3px;
+    left: 21px;
     color: #fff;
     font-size: 13px;
     font-weight: 300;
@@ -48,19 +52,20 @@
   }
 
   &__content {
-    padding: 4px 20px 20px;
+    padding: 0px 20px 20px;
   }
 
   &__title {
     @include heading;
     @include head-course;
+    margin-top: 17px;
     margin-bottom: 14px;
   }
 
   &__info {
     display: flex;
     align-items: center;
-    padding-bottom: 78px;
+    padding-bottom: 76px;
   }
 
   &__lessons {
@@ -89,7 +94,7 @@
     color: $content-button-after-background;
     border: none;
     border-radius: 4px;
-    padding: 10px 20px;
+    padding: 10px 19px 10px 20px;
     margin-right: 8px;
 
     &:hover {

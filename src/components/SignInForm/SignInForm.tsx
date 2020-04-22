@@ -1,4 +1,9 @@
-import React, { FC, useEffect, useRef, useCallback } from 'react';
+import React, {
+  FC,
+  useEffect,
+  useRef,
+  useCallback,
+} from 'react';
 import {
   HashRouter as Router,
   NavLink,
@@ -11,13 +16,15 @@ import { connect } from 'react-redux';
 import { Registration } from '../Registration/Registration';
 import { SignIn } from '../SignIn/SignIn';
 import { setSignInClicked } from '../../redux/actionCreators';
+import { State } from '../../redux/store';
 import './SignInForm.scss';
 
 interface Props {
   changeSignInClicked: (status: boolean) => void;
+  signInClicked: boolean;
 }
 
-export const SignInFormTemplate: FC<Props> = ({ changeSignInClicked }) => {
+export const SignInFormTemplate: FC<Props> = ({ changeSignInClicked, signInClicked }) => {
   const divEl = useRef<HTMLDivElement>(null);
 
   const handleClick = useCallback((e: Event) => {
@@ -25,9 +32,9 @@ export const SignInFormTemplate: FC<Props> = ({ changeSignInClicked }) => {
       return '';
     }
 
-    changeSignInClicked(false);
+    // changeSignInClicked(false);
 
-    return <Redirect to="/" />;
+    return '';
   }, [changeSignInClicked]);
 
   useEffect(() => {
@@ -57,8 +64,8 @@ export const SignInFormTemplate: FC<Props> = ({ changeSignInClicked }) => {
             </li>
           </ul>
           <Switch>
-            <Route path="/registration" exact component={Registration} />
-            <Route path="/sign-in" exact component={SignIn} />
+            <Route path="/registration" exact render={() => (signInClicked ? <Registration /> : <Redirect to="/" />)} />
+            <Route path="/sign-in" exact render={() => (signInClicked ? <SignIn /> : <Redirect to="/" />)} />
           </Switch>
         </Router>
       </div>
@@ -66,11 +73,15 @@ export const SignInFormTemplate: FC<Props> = ({ changeSignInClicked }) => {
   );
 };
 
+const mapStateToProps = (state: State) => ({
+  signInClicked: state.signInClicked,
+});
+
 const mapDispatchToProps = {
   changeSignInClicked: setSignInClicked,
 };
 
 export const SignInForm = connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps,
 )(SignInFormTemplate);

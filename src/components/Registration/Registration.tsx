@@ -1,10 +1,18 @@
 import React, { FC, useState } from 'react';
-import { Link, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
+import { setSignInClicked } from '../../redux/actionCreators';
+import { State } from '../../redux/store';
 import './Registration.scss';
 import '../Form.scss';
 
-export const Registration: FC = () => {
+interface Props {
+  changeSignInClicked: (status: boolean) => void;
+  signInClicked: boolean;
+}
+
+export const RegistrationTemplate: FC<Props> = ({ changeSignInClicked }) => {
   const [focusedUserName, setFocusedUserName] = useState(false);
   const [focusedEmail, setFocusedEmail] = useState(false);
   const [focusedPhone, setFocusedPhone] = useState(false);
@@ -68,7 +76,7 @@ export const Registration: FC = () => {
     event.preventDefault();
 
     if (accepted) {
-      return <Redirect to="/" />;
+      changeSignInClicked(false);
     }
 
     return '';
@@ -178,3 +186,16 @@ export const Registration: FC = () => {
     </>
   );
 };
+
+const mapStateToProps = (state: State) => ({
+  signInClicked: state.signInClicked,
+});
+
+const mapDispatchToProps = {
+  changeSignInClicked: setSignInClicked,
+};
+
+export const Registration = connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(RegistrationTemplate);

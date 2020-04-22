@@ -30,7 +30,7 @@ export const CourseCard: FC<Props> = ({ course }) => {
       <div className="course__progress">
       </div>
       <div className="course__progress-text">
-        {`Progress ${progress} %`}
+        {`Progress ${progress}%`}
       </div>
       <div className="course__content">
         <h3 className="course__title">{title}</h3>

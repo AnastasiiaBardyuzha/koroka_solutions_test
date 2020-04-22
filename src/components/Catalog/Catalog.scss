@@ -7,30 +7,154 @@
       @include heading;
       @include head-main;
       margin-top: 40px;
+      margin-bottom: 11px;
     }
 
     &__content {
       max-width: 724px;
-      margin-bottom: 32px;
+      margin-bottom: 31px;
     }
 
     &__form {
-      width: 100%;
       display: flex;
-      justify-content: space-between;
+    }
+
+    &__label {
+      left: 44px;
     }
 
     &__search {
       @include input-look;
       width: 985px;
       height: 56px;
+      margin-right: 20px;
+    }
+
+    &__search-icon {
+      display: block;
+      position: absolute;
+      top: 17px;
+      left: 12px;
+    }
+
+    &__select {
+      @include input-look;
+      width: 259px;
+      height: 56px;
+    }
+
+    &__label-select {
+      z-index: 10;
     }
 
     &__courses {
-      margin-top: 32px;
+      margin-top: 33px;
       display: grid;
       grid-template-columns: repeat(3, 400px);
       grid-gap: 32px;
       justify-content: center;
     }
+}
+
+.catalog__select select {
+  &:hover {
+    box-shadow: 0px 4px 24px rgba(51, 51, 51, 0.24), 0px 4px 4px rgba(51, 51, 51, 0.04);
+  }
+
+  &:focus {
+    box-shadow: 0px 4px 24px rgba(51, 51, 51, 0.24), 0px 4px 4px rgba(51, 51, 51, 0.04);
+  }
+}
+
+form .catalog__label {
+  left: 44px;
+}
+
+form .catalog__search {
+  padding-left: 44px;
+}
+
+form .catalog__select {
+  padding-top: 20px;
+  padding-left: 2px;
+}
+
+form .select__value-container {
+  padding-left: 14;
+}
+
+form .select__control {
+  border: none;
+  background-color: transparent;
+ 
+
+  &:hover {
+    border: none
+  }
+
+  &:focus {
+    border: none;
+    outline: none;
+  }
+}
+
+form .select__control {
+  border: none;
+  outline: none;
+  box-shadow: none;
+  background-color: transparent;
+
+  &:hover {
+    border: none;
+  }
+}
+
+.select__value-container:focus {
+  outline: none;
+}
+
+.catalog .catalog__select-control {
+    display: inline-block;
+    width: 21px;
+    height: 21px;
+    position: relative;
+    top: 2px;
+    left: 7px;
+    transition: opacity 200ms linear;
+
+    &:hover {
+      opacity: 0.8;
+    }
+}
+
+.catalog .opacity {
+  opacity: 0.5;
+}
+
+.catalog .select__menu {
+  width: 259px;
+  padding: 4px 0 4px 5px;
+  position: relative;
+  margin-top: 2px;
+  left: -1px;
+  box-shadow: 0px 4px 24px rgba(51, 51, 51, 0.24), 0px 4px 4px rgba(51, 51, 51, 0.04);
+}
+
+.catalog .select__indicator-separator {
+  display: none;
+}
+
+.catalog .select__indicator {
+  padding: 0;
+  cursor: pointer;
+}
+
+.catalog .select__single-value {
+  margin-left: 7px;
+}
+
+.catalog .select__indicator{
+  position: relative;
+  top: -11px;
+  left: -2px;
 }
