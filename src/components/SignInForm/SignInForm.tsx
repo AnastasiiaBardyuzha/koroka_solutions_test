@@ -9,7 +9,6 @@ import {
   NavLink,
   Switch,
   Route,
-  Redirect,
 } from 'react-router-dom';
 import { connect } from 'react-redux';
 
@@ -24,7 +23,7 @@ interface Props {
   signInClicked: boolean;
 }
 
-export const SignInFormTemplate: FC<Props> = ({ changeSignInClicked, signInClicked }) => {
+export const SignInFormTemplate: FC<Props> = ({ changeSignInClicked }) => {
   const divEl = useRef<HTMLDivElement>(null);
 
   const handleClick = useCallback((e: Event) => {
@@ -32,7 +31,7 @@ export const SignInFormTemplate: FC<Props> = ({ changeSignInClicked, signInClick
       return '';
     }
 
-    // changeSignInClicked(false);
+    changeSignInClicked(false);
 
     return '';
   }, [changeSignInClicked]);
@@ -64,8 +63,10 @@ export const SignInFormTemplate: FC<Props> = ({ changeSignInClicked, signInClick
             </li>
           </ul>
           <Switch>
-            <Route path="/registration" exact render={() => (signInClicked ? <Registration /> : <Redirect to="/" />)} />
-            <Route path="/sign-in" exact render={() => (signInClicked ? <SignIn /> : <Redirect to="/" />)} />
+            {/* <Route path="/registration" exact render={() => (signInClicked ? <Registration /> : <Redirect to="/" />)} />
+            <Route path="/sign-in" exact render={() => (signInClicked ? <SignIn /> : <Redirect to="/" />)} /> */}
+            <Route path="/registration" exact component={Registration} />
+            <Route path="/sign-in" exact component={SignIn} />
           </Switch>
         </Router>
       </div>

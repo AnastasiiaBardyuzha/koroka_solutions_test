@@ -99,9 +99,7 @@ export const Catalog: FC<Props> = () => {
   return (
     <div className="catalog">
       <h2 className="catalog__title">Course catalog</h2>
-      <div className="catalog__content">
-        Each course contains video lectures, tasks, and text materials. All courses viewed by you are displayed in your personal account
-      </div>
+      <div className="catalog__content">Each course contains video lectures, tasks, and text materials. All courses viewed by you are displayed in your personal account</div>
       <form className="catalog__form form">
         <div className="form__input-wrapper">
           <img src="./images/search.png" alt="Loupe" className="catalog__search-icon" />
@@ -122,6 +120,7 @@ export const Catalog: FC<Props> = () => {
         <div
           className="form__input-wrapper catalog__select"
           tabIndex={0}
+          role="button"
           onFocus={focusedInput}
           onBlur={() => unFocused(valueSelect, setFocusedSelect)}
           focused-input="focusedSelect"

@@ -49,6 +49,7 @@
   @include nav_link;
   text-align: center;
   color: $content-button-after-background;
+  border: 2px solid transparent;
 
   &:hover {
     background-color: $button-light-hover-color;

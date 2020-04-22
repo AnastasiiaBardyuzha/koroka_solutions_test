@@ -44,6 +44,7 @@
         margin-bottom: 8px;
         background-color: $content-button-after-background;
         border-radius: 4px;
+        border: 2px solid transparent;
         transition: background-color 200ms linear;
   
         &:hover {

@@ -1,5 +1,5 @@
 import React, { FC, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import { setSignInClicked } from '../../redux/actionCreators';
@@ -20,6 +20,7 @@ export const RegistrationTemplate: FC<Props> = ({ changeSignInClicked }) => {
   const [userName, setUserName] = useState('');
   const [userEmail, setUserEmail] = useState('');
   const [userPhone, setUserPhone] = useState('');
+  const history = useHistory();
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = event.target;
@@ -76,10 +77,9 @@ export const RegistrationTemplate: FC<Props> = ({ changeSignInClicked }) => {
     event.preventDefault();
 
     if (accepted) {
+      history.push('/');
       changeSignInClicked(false);
     }
-
-    return '';
   };
 
   return (
