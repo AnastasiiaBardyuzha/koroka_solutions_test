@@ -41,9 +41,9 @@ export const HeaderTemplate: FC<Props> = ({
         onClick={() => changeToggledGamb(!toggledGamb)}
       >
         <div className={`nav-icon ${toggledGamb ? 'open' : ''}`}>
-          <span></span>
-          <span></span>
-          <span></span>
+          <span> </span>
+          <span> </span>
+          <span> </span>
         </div>
       </button>
       <div className="nav-part">

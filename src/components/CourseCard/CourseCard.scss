@@ -8,6 +8,14 @@
   position: relative;
   overflow: hidden;
 
+  @media screen and (max-width: 420px) {
+    max-width: 400px;
+  }
+
+  @media screen and (max-width: 340px) {
+    max-width: 300px;
+  }
+
   &__cover {
     display: block;
     position: relative;
@@ -66,12 +74,21 @@
     display: flex;
     align-items: center;
     padding-bottom: 76px;
+
+    @media screen and (max-width: 420px) {
+      flex-wrap: wrap;
+    }
   }
 
   &__lessons {
     display: flex;
     align-items: center;
     margin-right: 12px;
+
+    @media screen and (max-width: 420px) {
+      width: 100%;
+      margin-bottom: 5px;
+    }
   }
 
   &__info-img {

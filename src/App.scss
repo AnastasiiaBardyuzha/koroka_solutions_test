@@ -13,4 +13,8 @@
 
 .main {
     padding: 0 51px;
+
+    @media screen and (max-width: 420px) {
+        padding: 0 10px;
+      } 
 }
