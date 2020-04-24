@@ -2,15 +2,19 @@ import React, { FC, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import { setSignInClicked } from '../../redux/actionCreators';
+import { setSignInClicked, setToggledGamb } from '../../redux/actionCreators';
 import './Registration.scss';
 import '../Form.scss';
 
 interface Props {
   changeSignInClicked: (status: boolean) => void;
+  changeToggledGamb: (status: boolean) => void;
 }
 
-export const RegistrationTemplate: FC<Props> = ({ changeSignInClicked }) => {
+export const RegistrationTemplate: FC<Props> = ({
+  changeSignInClicked,
+  changeToggledGamb,
+}) => {
   const [focusedUserName, setFocusedUserName] = useState(false);
   const [focusedEmail, setFocusedEmail] = useState(false);
   const [focusedPhone, setFocusedPhone] = useState(false);
@@ -77,6 +81,7 @@ export const RegistrationTemplate: FC<Props> = ({ changeSignInClicked }) => {
     if (accepted) {
       history.push('/');
       changeSignInClicked(false);
+      changeToggledGamb(false);
     }
   };
 
@@ -187,6 +192,7 @@ export const RegistrationTemplate: FC<Props> = ({ changeSignInClicked }) => {
 
 const mapDispatchToProps = {
   changeSignInClicked: setSignInClicked,
+  changeToggledGamb: setToggledGamb,
 };
 
 export const Registration = connect(

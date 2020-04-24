@@ -15,16 +15,17 @@ import { connect } from 'react-redux';
 
 import { Registration } from '../Registration/Registration';
 import { SignIn } from '../SignIn/SignIn';
-import { setSignInClicked } from '../../redux/actionCreators';
-import { State } from '../../redux/store';
+import { setSignInClicked, setToggledGamb } from '../../redux/actionCreators';
 import './SignInForm.scss';
 
 interface Props {
   changeSignInClicked: (status: boolean) => void;
-  signInClicked: boolean;
+  changeToggledGamb: (status: boolean) => void;
 }
 
-export const SignInFormTemplate: FC<Props> = ({ changeSignInClicked }) => {
+export const SignInFormTemplate: FC<Props> = ({
+  changeSignInClicked, changeToggledGamb,
+}) => {
   const divEl = useRef<HTMLDivElement>(null);
   const history = useHistory();
 
@@ -34,10 +35,11 @@ export const SignInFormTemplate: FC<Props> = ({ changeSignInClicked }) => {
     }
 
     changeSignInClicked(false);
+    changeToggledGamb(false);
     history.push('/');
 
     return '';
-  }, [changeSignInClicked, history]);
+  }, [changeSignInClicked, history, changeToggledGamb]);
 
   useEffect(() => {
     document.addEventListener('mousedown', handleClick, false);
@@ -75,15 +77,12 @@ export const SignInFormTemplate: FC<Props> = ({ changeSignInClicked }) => {
   );
 };
 
-const mapStateToProps = (state: State) => ({
-  signInClicked: state.signInClicked,
-});
-
 const mapDispatchToProps = {
   changeSignInClicked: setSignInClicked,
+  changeToggledGamb: setToggledGamb,
 };
 
 export const SignInForm = connect(
-  mapStateToProps,
+  null,
   mapDispatchToProps,
 )(SignInFormTemplate);

@@ -1,2 +1,3 @@
 export const SET_IS_LOGGED = 'SET_IS_LOGGED';
 export const SET_SIGN_IN_CLICKED = 'SET_SIGN_IN_CLICKED';
+export const SET_TOGGLED_GAMB = 'SET_TOGGLED_GAMB';

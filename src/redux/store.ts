@@ -6,16 +6,19 @@ import {
 import {
   SET_IS_LOGGED,
   SET_SIGN_IN_CLICKED,
+  SET_TOGGLED_GAMB,
 } from './constants';
 
 export interface State {
   isLogged: boolean;
   signInClicked: boolean;
+  toggledGamb: boolean;
 }
 
 const initialState = {
   isLogged: false,
   signInClicked: false,
+  toggledGamb: false,
 };
 
 export const reduser = (state = initialState, action: AnyAction) => {
@@ -30,6 +33,12 @@ export const reduser = (state = initialState, action: AnyAction) => {
       return {
         ...state,
         signInClicked: action.signInClicked,
+      };
+
+    case SET_TOGGLED_GAMB:
+      return {
+        ...state,
+        toggledGamb: action.toggledGamb,
       };
 
     default:

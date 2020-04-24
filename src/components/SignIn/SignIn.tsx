@@ -2,18 +2,24 @@ import React, { FC, useState } from 'react';
 import { connect } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
-import { setSignInClicked, setIsLogged } from '../../redux/actionCreators';
+import {
+  setSignInClicked,
+  setIsLogged,
+  setToggledGamb,
+} from '../../redux/actionCreators';
 import './SignIn.scss';
 import '../Form.scss';
 
 interface Props {
   changeSignInClicked: (status: boolean) => void;
   changeIsLogged: (status: boolean) => void;
+  changeToggledGamb: (status: boolean) => void;
 }
 
 export const SignInTemplate: FC<Props> = ({
   changeSignInClicked,
   changeIsLogged,
+  changeToggledGamb,
 }) => {
   const [focusedUserName, setFocusedUserName] = useState(false);
   const [focusedEmail, setFocusedEmail] = useState(false);
@@ -73,6 +79,7 @@ export const SignInTemplate: FC<Props> = ({
     if (userName === 'Michael Browk' && userEmail === 'michael@gmail.com') {
       changeSignInClicked(false);
       changeIsLogged(true);
+      changeToggledGamb(false);
 
       history.push('/');
     }
@@ -132,6 +139,7 @@ export const SignInTemplate: FC<Props> = ({
 const mapDispatchToProps = {
   changeSignInClicked: setSignInClicked,
   changeIsLogged: setIsLogged,
+  changeToggledGamb: setToggledGamb,
 };
 
 export const SignIn = connect(

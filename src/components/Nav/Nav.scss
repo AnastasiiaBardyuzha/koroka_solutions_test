@@ -16,12 +16,12 @@
       }
 
     &__item {
-			display: inline-block;
-			margin-right: 25px;
+      display: inline-block;
+      margin-right: 25px;
 
-			&:last-child {
-				margin-right: 0;
-			}
+      &:last-child {
+        margin-right: 0;
+      }
 		}
 
 		&__link {
@@ -31,30 +31,15 @@
 			padding-bottom: 27px;
 			position: relative;
 
-			&:hover {
-				color: $main-color;
-			}
-
-			&:focus {
-				color: $main-color;
-			}
-
-	
 			&:after {
 				@include link-after;
 				width: 0;
 				transition: width 0.1s linear;
 			}
 
-			&.active:after {
-				@include link-after-focus-hover;
-			}
-
-			&:hover:after {
-				@include link-after-focus-hover;
-			}
-	
-			&:focus:after {
+      &.active:after,
+      &:hover:after,
+      &:focus:after {
 				@include link-after-focus-hover;
 			}
 		}
