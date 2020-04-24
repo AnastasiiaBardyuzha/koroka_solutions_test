@@ -9,6 +9,7 @@ import {
   NavLink,
   Switch,
   Route,
+  useHistory,
 } from 'react-router-dom';
 import { connect } from 'react-redux';
 
@@ -25,6 +26,7 @@ interface Props {
 
 export const SignInFormTemplate: FC<Props> = ({ changeSignInClicked }) => {
   const divEl = useRef<HTMLDivElement>(null);
+  const history = useHistory();
 
   const handleClick = useCallback((e: Event) => {
     if (divEl.current && divEl.current.contains(e.target as Node)) {
@@ -32,9 +34,10 @@ export const SignInFormTemplate: FC<Props> = ({ changeSignInClicked }) => {
     }
 
     changeSignInClicked(false);
+    history.push('/');
 
     return '';
-  }, [changeSignInClicked]);
+  }, [changeSignInClicked, history]);
 
   useEffect(() => {
     document.addEventListener('mousedown', handleClick, false);
@@ -44,7 +47,7 @@ export const SignInFormTemplate: FC<Props> = ({ changeSignInClicked }) => {
 
 
   return (
-    <>
+    <div className="sign-in-form-wrapper">
       <div className="sign-in-form" ref={divEl}>
         <h3 className="sign-in-form__title">
           Profile
@@ -63,14 +66,12 @@ export const SignInFormTemplate: FC<Props> = ({ changeSignInClicked }) => {
             </li>
           </ul>
           <Switch>
-            {/* <Route path="/registration" exact render={() => (signInClicked ? <Registration /> : <Redirect to="/" />)} />
-            <Route path="/sign-in" exact render={() => (signInClicked ? <SignIn /> : <Redirect to="/" />)} /> */}
             <Route path="/registration" exact component={Registration} />
             <Route path="/sign-in" exact component={SignIn} />
           </Switch>
         </Router>
       </div>
-    </>
+    </div>
   );
 };
 

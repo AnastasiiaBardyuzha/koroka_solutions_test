@@ -3,13 +3,11 @@ import { Link, useHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import { setSignInClicked } from '../../redux/actionCreators';
-import { State } from '../../redux/store';
 import './Registration.scss';
 import '../Form.scss';
 
 interface Props {
   changeSignInClicked: (status: boolean) => void;
-  signInClicked: boolean;
 }
 
 export const RegistrationTemplate: FC<Props> = ({ changeSignInClicked }) => {
@@ -187,15 +185,11 @@ export const RegistrationTemplate: FC<Props> = ({ changeSignInClicked }) => {
   );
 };
 
-const mapStateToProps = (state: State) => ({
-  signInClicked: state.signInClicked,
-});
-
 const mapDispatchToProps = {
   changeSignInClicked: setSignInClicked,
 };
 
 export const Registration = connect(
-  mapStateToProps,
+  null,
   mapDispatchToProps,
 )(RegistrationTemplate);

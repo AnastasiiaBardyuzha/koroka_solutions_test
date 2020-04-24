@@ -89,7 +89,6 @@
   &__button {
     @include button;
     outline: none;
-
     background: #fff;
     color: $content-button-after-background;
     border: none;

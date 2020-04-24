@@ -1,0 +1,38 @@
+@import "../../utils/vars"; 
+@import "../../utils/mixins"; 
+
+.profile {
+  text-align: right;
+
+  &__title {
+      @include heading;
+      text-align: center;
+  }
+
+  &__button {
+    @include button;
+    display: inline-block;
+    width: 150px;
+    padding: 8px;
+    color: #fff;
+    margin-bottom: 8px;
+    background-color: $content-button-after-background;
+    border-radius: 4px;
+    border: 2px solid transparent;
+    transition: background-color 200ms linear;
+
+    &:hover {
+      background-color: $button-hover-color;
+    }
+
+    &:active {
+      background-color: $button-active-color;
+    }
+
+    &:focus {
+      outline: none;
+      border: 2px solid #472C8A;
+    }
+  }
+
+}

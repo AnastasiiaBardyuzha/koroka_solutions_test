@@ -101,7 +101,7 @@ export const Catalog: FC<Props> = () => {
       <h2 className="catalog__title">Course catalog</h2>
       <div className="catalog__content">Each course contains video lectures, tasks, and text materials. All courses viewed by you are displayed in your personal account</div>
       <form className="catalog__form form">
-        <div className="form__input-wrapper">
+        <div className="form__input-wrapper form__input-wrapper_search">
           <img src="./images/search.png" alt="Loupe" className="catalog__search-icon" />
           <label htmlFor="search" className={`form__label catalog__label ${focusedSearch ? 'form__label-focused' : ''}`}>
             Search

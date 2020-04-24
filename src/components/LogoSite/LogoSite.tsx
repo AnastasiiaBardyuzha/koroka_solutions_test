@@ -9,6 +9,8 @@ import { connect } from 'react-redux';
 import { Header } from '../Header/Header';
 import { FreeTest } from '../FreeTest/FreeTest';
 import { Catalog } from '../Catalog/Catalog';
+import { Help } from '../Help/Help';
+import { Profile } from '../Profile/Profile';
 import { SignInForm } from '../SignInForm/SignInForm';
 import { State } from '../../redux/store';
 
@@ -17,25 +19,21 @@ interface Props {
 }
 
 
-export const LogoSiteTemplate: FC<Props> = ({ signInClicked }) => {
-  if (signInClicked) {
-    return (
-      <SignInForm />
-    );
-  }
+export const LogoSiteTemplate: FC<Props> = ({ signInClicked }) => (
+  <Router>
+    <Header />
+    {signInClicked && <SignInForm />}
+    <main className="main">
+      <Switch>
+        <Route path="/" exact component={FreeTest} />
+        <Route path="/catalog" exact component={Catalog} />
+        <Route path="/help" exact component={Help} />
+        <Route path="/profile" exact component={Profile} />
+      </Switch>
+    </main>
+  </Router>
+);
 
-  return (
-    <Router>
-      <Header />
-      <main className="main">
-        <Switch>
-          <Route path="/" exact component={FreeTest} />
-          <Route path="/catalog" exact component={Catalog} />
-        </Switch>
-      </main>
-    </Router>
-  );
-};
 
 const mapStateToProps = (state: State) => ({
   signInClicked: state.signInClicked,

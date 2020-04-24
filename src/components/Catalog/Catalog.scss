@@ -17,6 +17,10 @@
 
     &__form {
       display: flex;
+
+      @media screen and (max-width: 1000px) {
+        flex-wrap: wrap;
+      }      
     }
 
     &__label {
@@ -25,7 +29,7 @@
 
     &__search {
       @include input-look;
-      width: 985px;
+      width: 100%;
       height: 56px;
       margin-right: 20px;
     }
@@ -53,6 +57,11 @@
       grid-template-columns: repeat(3, 400px);
       grid-gap: 32px;
       justify-content: center;
+
+      @media screen and (max-width: 1375px) {
+        grid-template-columns: 400px;
+        justify-content: center;
+      }
     }
 }
 
