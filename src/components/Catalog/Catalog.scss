@@ -3,76 +3,76 @@
 
 .catalog {
 
-    &__title {
-      @include heading;
-      @include head-main;
-      margin-top: 40px;
-      margin-bottom: 11px;
-    }
+  &__title {
+    @include heading;
+    @include head-main;
+    margin-top: 40px;
+    margin-bottom: 11px;
+  }
 
-    &__content {
-      max-width: 724px;
-      margin-bottom: 31px;
-    }
+  &__content {
+    max-width: 724px;
+    margin-bottom: 31px;
+  }
 
-    &__form {
-      display: flex;
+  &__form {
+    display: flex;
 
-      @media screen and (max-width: 1000px) {
-        flex-wrap: wrap;
-      }      
-    }
+    @media screen and (max-width: 1000px) {
+      flex-wrap: wrap;
+    }      
+  }
 
-    &__label {
-      left: 44px;
-    }
+  &__label {
+    left: 44px;
+  }
 
-    &__search {
-      @include input-look;
-      width: 100%;
-      height: 56px;
-      margin-right: 20px;
-    }
+  &__search {
+    @include input-look;
+    width: 100%;
+    height: 56px;
+    margin-right: 20px;
+  }
 
-    &__search-icon {
-      display: block;
-      position: absolute;
-      top: 17px;
-      left: 12px;
-    }
+  &__search-icon {
+    display: block;
+    position: absolute;
+    top: 17px;
+    left: 12px;
+  }
 
-    &__select {
-      @include input-look;
-      width: 259px;
-      height: 56px;
-    }
+  &__select {
+    @include input-look;
+    width: 259px;
+    height: 56px;
+  }
 
-    &__label-select {
-      z-index: 10;
-    }
+  &__label-select {
+    z-index: 10;
+  }
 
-    &__courses {
-      margin-top: 33px;
-      display: grid;
-      grid-template-columns: repeat(3, 400px);
-      grid-gap: 32px;
+  &__courses {
+    margin-top: 33px;
+    display: grid;
+    grid-template-columns: repeat(3, 400px);
+    grid-gap: 32px;
+    justify-content: center;
+
+    @media screen and (max-width: 1375px) {
+      grid-template-columns: 400px;
       justify-content: center;
-
-      @media screen and (max-width: 1375px) {
-        grid-template-columns: 400px;
-        justify-content: center;
-      }
-
-      @media screen and (max-width: 420px) {
-        grid-template-columns: 320px;
-        justify-content: center;
-      }
-
-      @media screen and (max-width: 340px) {
-        grid-template-columns: 300px;
-        justify-content: center;
-      }
     }
+
+    @media screen and (max-width: 420px) {
+      grid-template-columns: 320px;
+      justify-content: center;
+    }
+
+    @media screen and (max-width: 340px) {
+      grid-template-columns: 300px;
+      justify-content: center;
+    }
+  }
 }
 
 .catalog__select select {

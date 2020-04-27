@@ -74,6 +74,7 @@ const mapStateToProps = (state: State) => ({
   isLogged: state.isLogged,
   toggledGamb: state.toggledGamb,
 });
+
 const mapDispatchToProps = {
   changeSignInClicked: setSignInClicked,
   changeToggledGamb: setToggledGamb,

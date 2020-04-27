@@ -1,94 +1,94 @@
 @import "_vars";
 
 @mixin reset-link {
-    text-decoration: none;
-    outline: none;
+  text-decoration: none;
+  outline: none;
+}
+
+@mixin nav_link {
+  font-family: $font-family-main;
+  font-size: 16px;
+  line-height: 24px;
+  transition: color 300ms linear;
+
+  &:hover,
+  &:focus {
+    color: $main-color;
+  }
+}
+
+@mixin button {
+  font-family: $font-family-main;
+  font-size: 16px;
+  line-height: 22px;
+  transition: all 200ms linear;
+}
+
+@mixin link-after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  border-radius: 4px;
+  background-color: $content-button-after-background;
+}
+
+@mixin link-after-focus-hover {
+  width: 100%;
+  left: 0;
+}
+
+@mixin heading {
+  font-family: $font-family-heading;
+  font-weight: 700;
+}
+
+@mixin head-course {
+  font-size: 20px;
+  line-height: 28px;
+}
+
+@mixin head-main {
+  font-size: 40px;
+  line-height: 48px;
+}
+
+@mixin head-sign-in-form {
+  font-size: 32px;
+  line-height: 40px;
+}
+
+@mixin input-look {
+  font-family: $font-family-main;
+  border: none;
+  font-size: 16px;
+  line-height: 24px;
+  background: #fff;
+  box-shadow: 0px 4px 16px rgba(51, 51, 51, 0.08), 0px 4px 4px rgba(51, 51, 51, 0.04);
+  border-radius: 4px;
+  padding: 26px 16px 6px;
+  outline: none;
+  transition: box-shadow 0.2s linear;
+    
+  &:hover {
+    box-shadow: 0px 4px 24px rgba(51, 51, 51, 0.24), 0px 4px 4px rgba(51, 51, 51, 0.04);
   }
 
-  @mixin nav_link {
-    font-family: $font-family-main;
-    font-size: 16px;
-    line-height: 24px;
-    transition: color 300ms linear;
+  &:focus {
+    box-shadow: 0px 4px 24px rgba(51, 51, 51, 0.24), 0px 4px 4px rgba(51, 51, 51, 0.04);
+  }
+}
 
-    &:hover,
-    &:focus {
-      color: $main-color;
-    }
-  }
-
-  @mixin button {
-    font-family: $font-family-main;
-    font-size: 16px;
-    line-height: 22px;
-    transition: all 200ms linear;
-  }
-
-  @mixin link-after {
-    content: "";
-    display: block;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 2px;
-    border-radius: 4px;
-    background-color: $content-button-after-background;
-  }
-
-  @mixin link-after-focus-hover {
-    width: 100%;
-    left: 0;
-  }
-
-  @mixin heading {
-    font-family: $font-family-heading;
-    font-weight: 700;
-  }
-  
-  @mixin head-course {
-    font-size: 20px;
-    line-height: 28px;
-  }
-  
-  @mixin head-main {
-    font-size: 40px;
-    line-height: 48px;
-  }
-
-  @mixin head-sign-in-form {
-    font-size: 32px;
-    line-height: 40px;
-  }
-
-  @mixin input-look {
-    font-family: $font-family-main;
-    border: none;
-    font-size: 16px;
-    line-height: 24px;
-    background: #fff;
-    box-shadow: 0px 4px 16px rgba(51, 51, 51, 0.08), 0px 4px 4px rgba(51, 51, 51, 0.04);
-    border-radius: 4px;
-    padding: 26px 16px 6px;
-    outline: none;
-    transition: box-shadow 0.2s linear;
-     
-    &:hover {
-      box-shadow: 0px 4px 24px rgba(51, 51, 51, 0.24), 0px 4px 4px rgba(51, 51, 51, 0.04);
-    }
-
-    &:focus {
-      box-shadow: 0px 4px 24px rgba(51, 51, 51, 0.24), 0px 4px 4px rgba(51, 51, 51, 0.04);
-    }
-  }
-
-  @mixin link-mobile {
-    font-family: $font-family-main;
-    display: inline-block;
-    font-weight: 600;
-    font-size: 25px;
-    line-height: 25px;
-    letter-spacing: 2px;
-    margin-bottom: 14px;
-    padding-bottom: 10px;
-    position: relative;
-  }
+@mixin link-mobile {
+  font-family: $font-family-main;
+  display: inline-block;
+  font-weight: 600;
+  font-size: 25px;
+  line-height: 25px;
+  letter-spacing: 2px;
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  position: relative;
+}

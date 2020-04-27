@@ -1,9 +1,7 @@
 import React, { FC } from 'react';
 import { NavLink } from 'react-router-dom';
 
-
 import './Nav.scss';
-
 
 export const Nav: FC = () => (
   <nav className="nav">

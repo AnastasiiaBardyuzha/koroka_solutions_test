@@ -1,20 +1,22 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
+
  body {
-    font-size: 16px;
-    line-height: 24px;
- }
+  font-size: 16px;
+  line-height: 24px;
+}
+
 .wrapper {
-    max-width: 1366px;
-    margin: 0 auto;
-    font-family: 'Roboto', sans-serif;
+  max-width: 1366px;
+  margin: 0 auto;
+  font-family: 'Roboto', sans-serif;
 }
 
 .main {
-    padding: 0 51px;
+  padding: 0 51px;
 
-    @media screen and (max-width: 420px) {
-        padding: 0 10px;
-      } 
+  @media screen and (max-width: 420px) {
+    padding: 0 10px;
+  } 
 }

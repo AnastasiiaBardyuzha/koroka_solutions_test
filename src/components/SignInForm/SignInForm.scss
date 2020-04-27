@@ -3,7 +3,7 @@
 
 .sign-in-form-wrapper {
 	display: block;
-	position: fixed;
+	position: absolute;
 	width: 100%;
 	height: 100%;
 	left: 0;
@@ -27,8 +27,13 @@
 	border-radius: 8px;
 
 	@media screen and (max-width: 420px) {
-        width: 320px;
-      }    
+        width: 310px;
+	  }    
+	
+	@media screen and (max-height: 500px) {
+		top: 0;
+		transform: translate(-50%, 0%);
+	}
 
 	&__title {
 		@include heading;
